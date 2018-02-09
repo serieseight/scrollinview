@@ -1,30 +1,30 @@
-let inViewClass
+let scrollInViewClass
 
 const check = (item, i, start, now, height) => {
-  const delay = parseInt(item.dataset.inviewDelay, 10) || 0
-  const offset = parseInt(item.dataset.inview, 10) || 0
+  const delay = parseInt(item.dataset.scrollInViewDelay, 10) || 0
+  const offset = parseInt(item.dataset.scrollInView, 10) || 0
 
   if (now >= start + delay) {
     const top = item.getBoundingClientRect().top
 
     if (height > top + offset) {
-      item.classList.add(inViewClass)
+      item.classList.add(scrollInViewClass)
     }
   }
 
   return item
 }
 
-const notDone = item => ! item.classList.contains(inViewClass)
+const notDone = item => ! item.classList.contains(scrollInViewClass)
 
 const init = (event, {
-  className = 'js-in-view'
+  className = 'js-scroll-in-view'
 } = {}) => {
   const start = Date.now()
 
-  inViewClass = className
+  scrollInViewClass = className
 
-  let items = [ ...document.querySelectorAll('[data-inview]') ]
+  let items = [ ...document.querySelectorAll('[data-scroll-in-view]') ]
 
   const token = event.subscribe('newContent', () => {
     const now = Date.now()

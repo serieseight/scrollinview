@@ -22,12 +22,12 @@ scrollinview(event)
 ```
 
 ```html
-<div class="content" data-inview>
+<div class="content" data-scroll-in-view>
   <!-- Content here -->
 </div>
 ```
 
-As soon as the element enters the viewport, a `js-in-view` class is added allowing a css animation to be triggered — this class can also be customised using an option (see below).
+As soon as the element enters the viewport, a `js-scroll-in-view` class is added allowing a css animation to be triggered — this class can also be customised using an option (see below).
 
 ### Options
 
@@ -35,7 +35,7 @@ The `scrollinview` function can optionally take an object as the second argument
 
 ### className
 
-The class name that Scroll in View uses when an element enters the viewport (defaults to `js-in-view`).
+The class name that Scroll in View uses when an element enters the viewport (defaults to `js-scroll-in-view`).
 
 ```js
 scrollinview(event, { className: 'my-custom-class' })
