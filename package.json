@@ -51,7 +51,7 @@
     "build:umd": "NODE_ENV=production BABEL_ENV=umd rollup -c",
     "commit": "git-cz",
     "prepare": "yarn tidy && yarn build",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "setup:semantic-release": "semantic-release-cli setup",
     "test": "exit 0",
     "tidy": "rm -rf modules cjs dist yarn-error.log",
