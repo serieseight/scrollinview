@@ -1,0 +1,61 @@
+{
+  "author": {
+    "name": "Aryeh Raber",
+    "email": "aryeh.raber@gmail.com",
+    "url": "https://serieseight.com"
+  },
+  "browserslist": "last 2 versions",
+  "bugs": {
+    "url": "https://github.com/serieseight/scrollinview/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "description": "Easily trigger classes as elements enter the viewport",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.39",
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.2.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
+    "jest": "^21.3.0-beta.15",
+    "rollup": "^0.55.3",
+    "rollup-plugin-babel": "4.0.0-beta.1",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^3.0.0",
+    "semantic-release": "^12.4.1",
+    "semantic-release-cli": "^3.6.2",
+    "travis-deploy-once": "^4.3.4"
+  },
+  "homepage": "https://github.com/serieseight/scrollinview#readme",
+  "jest": {
+    "testRegex": "/tests/.*$"
+  },
+  "license": "MIT",
+  "main": "cjs/index.js",
+  "module": "modules/index.js",
+  "name": "scrollinview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serieseight/scrollinview"
+  },
+  "scripts": {
+    "build": "yarn build:cjs && yarn build:modules && yarn build:umd",
+    "build:cjs": "NODE_ENV=production BABEL_ENV=cjs babel src --out-dir cjs",
+    "build:modules": "NODE_ENV=production BABEL_ENV=modules babel src --out-dir modules",
+    "build:umd": "NODE_ENV=production BABEL_ENV=umd rollup -c",
+    "commit": "git-cz",
+    "prepare": "yarn tidy && yarn build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "setup:semantic-release": "semantic-release-cli setup",
+    "test": "exit 0",
+    "tidy": "rm -rf modules cjs dist yarn-error.log",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "version": "1.0.0"
+}
