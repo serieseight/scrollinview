@@ -57,5 +57,5 @@
     "tidy": "rm -rf modules cjs dist yarn-error.log",
     "travis-deploy-once": "travis-deploy-once"
   },
-  "version": "1.0.0"
+  "version": "0.0.0-development"
 }
