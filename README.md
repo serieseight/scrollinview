@@ -35,7 +35,7 @@ The `scrollinview` function can optionally take an object as the second argument
 
 ### className
 
-The class name that Scroll in View uses when an element enters the viewport. Defaults to `js-in-view`.
+The class name that Scroll in View uses when an element enters the viewport (defaults to `js-in-view`).
 
 ```js
 scrollinview(event, { className: 'my-custom-class' })
